@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secure Download</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input { padding: 10px; width: 250px; }
+    button { padding: 10px 20px; margin-top: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Password to Download</h2>
+
+  <input type="password" id="password" placeholder="Enter password">
+  <br>
+  <button onclick="checkPassword()">Submit</button>
+
+  <div id="download-section" class="hidden">
+    <h3>✅ Correct Password!</h3>
+    <a href="simimage.zip" download>Click here to download</a>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const enteredPassword = document.getElementById('password').value;
+      const correctPassword = ' simspineimage'; // CHANGE this to your real password
+
+      if (enteredPassword === correctPassword) {
+        document.getElementById('download-section').classList.remove('hidden');
+      } else {
+        alert('Incorrect password, try again.');
+      }
+    }
+  </script>
+
+</body>
+</html>
